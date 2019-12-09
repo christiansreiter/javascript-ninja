@@ -1,5 +1,5 @@
 (function(win, doc)  {
-
+    'use strict'
     /*
     1. Envolva todo o conteúdo desse desafio em uma IIFE.
     2. Adicione a diretiva 'use strict';
@@ -19,6 +19,7 @@
     var username = win.prompt('Qual o seu nome?');
     if(!username) 
         username = 'Desconhecido'
+    win.alert('Bem vindo ' + username + '!');
 
     // console.log(username);
 
@@ -90,7 +91,7 @@
         - "Não enviado."
     */
 
-
+    /*
     $button.addEventListener('click', function(event) {
         event.preventDefault();
         if($inputUsername.value === ''|| $inputUsername.value === 'Desconhecido') {
@@ -110,8 +111,21 @@
             }
         }
     });
-
-
+    */
+    $button.addEventListener('click', function(event) {
+        event.preventDefault();
+        if(!$inputUsername.value || $inputUsername.value === 'Desconhecido')
+            return win.alert('Preencha o nome de usuário!');
+        if(!$inputEmail.value)
+            return win.alert('Preencha o e-mail!');
+        if(!$message.value)
+            return win.alert('Preecha a mensagem!');
+        if(!isValidEmail($inputEmail.value))
+            return win.alert('Entre um e-mail válido!');
+        if(!win.confirm('Tem certeza que deseja enviar o formulario?'))
+            return win.alert('Não enviado.');
+        return win.alert('Enviado com sucesso!');
+    }, false)
 
     
 
@@ -142,7 +156,7 @@
         - "agua_@evida.br.com"
     */
     function isValidEmail(email) {
-        return /^\w[\w.+]+@[\w_]+\.\w{2,}\.?(?:\w{2})?/.test(email) 
+        return /^\w[\w.+]+@\w+\.\w{2,}(?:\.\w{2})?$/.test(email) 
     }
 
 })(window, document);
