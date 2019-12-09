@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+
+        body {
+            margin-top: 70px;
+        }
+
+        .input {
+            width: 100px;
+            height: 100px;
+            font-size: 3rem;
+            display: block;
+            margin: 0 auto;
+            padding: 2px 5px;
+            text-align: center;
+        }
+        
+        .button {
+            width: 250px;
+            padding-top: 20px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            
+        
+        }
+        button{
+            display: inline-block;
+            margin-left: 10px;
+            width: 100px;
+            height: 40px;
+            border-radius: 30%;
+        }
+
+
+    </style>
+    <title>Cronometro</title>
+</head>
+<body>
+    <input class="input" data-js="input" type="text" value="0">
+    <div class="button">
+        <button data-js="start">Start</button>
+        <button data-js="stop">Stop</button>
+        <button data-js="reset">Reset</button>
+    </div>
+    <script src="./challenge-21.js"></script>
+</body>
+</html>
