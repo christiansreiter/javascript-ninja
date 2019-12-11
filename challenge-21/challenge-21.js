@@ -22,17 +22,26 @@
     var $reset = doc.querySelector('button[data-js="reset"]');
     var timerCounter;
 
-    $start.addEventListener('click', function(){setTimeout(timer, 1000);}, false);
-    $stop.addEventListener('click', function(){clearTimeout(timerCounter);}, false);
-    $reset.addEventListener('click', function() {
-        clearTimeout(timerCounter);
-        $input.value = 0;
-    })
+    $start.addEventListener('click', function(){setTimeout(startTimer, 1000);}, false);
+    $stop.addEventListener('click', stopTimer, false);
+    $reset.addEventListener('click', resetTimer, false)
 
-    function timer() {
+    function startTimer() {
         $input.value++;
         timerCounter = setTimeout(timer, 1000);
     }
+
+    function stopTimer() {
+        clearTimeout(timerCounter)
+    }
+
+    function resetTimer() {
+        $input.value = 0;
+        stop()
+    }
+
+
+
 
 
 })(window, document);
