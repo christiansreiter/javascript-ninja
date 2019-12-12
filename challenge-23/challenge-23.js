@@ -104,7 +104,7 @@
         }
     })
     console.log(arr)
-    if(!Number(arr[arr.length - 1]) && arr[arr.length + 1] !== '0'){
+    if(!Number(arr[arr.length - 1]) && arr[arr.length - 1] !== '0'){
       arr.pop()}
 
       return arr;
