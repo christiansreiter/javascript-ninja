@@ -95,6 +95,7 @@
 
     function inputStringToArray(string) {
       var arr = []
+      //  $visor.value.match(/\d+|[/*+-]/g)
       string.replace(/(\d+)([\/*\-+])(?:(\d+)$)?/g, function(match, one, two, tree) {
         console.log(tree)
         if(!!tree){
